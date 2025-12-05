@@ -1,3 +1,7 @@
 # Python dependencies for statistik-workbook
 pandas
+numpy
 openpyxl
+matplotlib
+scipy
+statsmodels
