@@ -1,0 +1,3 @@
+# Python dependencies for statistik-workbook
+pandas
+openpyxl
