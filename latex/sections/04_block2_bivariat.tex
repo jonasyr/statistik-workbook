@@ -1,0 +1,104 @@
+% ============================================================
+%          BLOCK 2: BIVARIATE DESKRIPTION
+% ============================================================
+
+\section{Bivariate Deskription}
+\label{sec:block2}
+
+\subsection{Aufgabe 2a: Zusammenhang \texttt{ep01} × \texttt{fe14} (ordinal)}
+
+\subsubsection{Kreuztabelle}
+
+% TODO: Kreuztabelle aus Python einfügen
+% \input{tables/ep01_fe14_crosstab.tex}
+
+\textbf{Interpretation:} [TODO: Beschreibung der gemeinsamen Verteilung]
+
+\subsubsection{Grafische Darstellung}
+
+\begin{figure}[h]
+    \centering
+    % TODO: Mosaikdiagramm aus Python einfügen
+    % \includegraphics[width=0.85\textwidth]{../figures/block2/ep01_fe14_mosaic.pdf}
+    \caption{Mosaikdiagramm: Zusammenhang zwischen aktueller Wirtschaftseinschätzung 
+    (\texttt{ep01}) und Erziehungsziel „beliebt sein" (\texttt{fe14}).}
+    \source{Eigene Darstellung auf Basis ALLBUS 2021.}
+    \label{fig:ep01_fe14}
+\end{figure}
+
+\subsubsection{Zusammenhangsmaß}
+
+Für den Zusammenhang zweier ordinaler Variablen eignet sich die Spearman-Rangkorrelation:
+
+\begin{itemize}
+    \item \textbf{Spearman-Korrelation:} $r_s =$ [TODO]
+    \item \textbf{p-Wert:} [TODO]
+\end{itemize}
+
+\textbf{Interpretation:} [TODO: Stärke und Richtung des Zusammenhangs, Signifikanz]
+
+\subsection{Aufgabe 2b: Korrelation \texttt{xt10} und \texttt{age} (metrisch)}
+
+\subsubsection{Streudiagramm}
+
+\begin{figure}[h]
+    \centering
+    % TODO: Streudiagramm aus Python einfügen
+    % \includegraphics[width=0.85\textwidth]{../figures/block2/xt10_age_scatter.pdf}
+    \caption{Streudiagramm: Zusammenhang zwischen Alter (\texttt{age}) und 
+    Interviewdauer (\texttt{xt10}).}
+    \source{Eigene Darstellung auf Basis ALLBUS 2021.}
+    \label{fig:xt10_age}
+\end{figure}
+
+\subsubsection{Pearson-Korrelation}
+
+% TODO: Korrelationstabelle aus Python einfügen
+% \input{tables/xt10_age_correlation.tex}
+
+\begin{itemize}
+    \item \textbf{Pearson-Korrelation:} $r =$ [TODO]
+    \item \textbf{p-Wert:} [TODO]
+    \item \textbf{Stichprobengröße:} $n =$ [TODO]
+\end{itemize}
+
+\textbf{Interpretation:} [TODO: Stärke und Richtung des linearen Zusammenhangs, 
+statistische Signifikanz]
+
+\subsection{Aufgabe 2c: Korrelation ist nicht Kausalität}
+
+Die gefundene Korrelation zwischen Alter und Interviewdauer [TODO: positiv/negativ/nicht signifikant] 
+bedeutet \textbf{nicht}, dass das Alter die Interviewdauer verursacht (oder umgekehrt).
+
+\subsubsection{Mögliche alternative Erklärungen}
+
+\begin{enumerate}
+    \item \textbf{Drittvariablen:} Eine nicht beobachtete Variable könnte beide beeinflussen. 
+    Beispielsweise könnte Bildungsniveau sowohl mit Alter als auch mit der Ausführlichkeit 
+    der Antworten korrelieren.
+    
+    \item \textbf{Interviewer-Effekte:} Die Interviewdauer hängt stark vom Interviewer ab 
+    (Fragetempo, Gesprächsführung). Wenn bestimmte Interviewer bevorzugt ältere oder jüngere 
+    Personen befragen, entsteht eine Scheinkorrelation.
+    
+    \item \textbf{Umgekehrte Kausalität:} Auch wenn eine kausale Beziehung bestünde, ist unklar, 
+    in welche Richtung sie verläuft.
+    
+    \item \textbf{Zufälligkeit:} Bei einem Signifikanzniveau von 5\% ist jede 20. Korrelation 
+    zufällig signifikant, selbst wenn kein echter Zusammenhang besteht.
+\end{enumerate}
+
+\subsubsection{Bedingungen für Kausalität}
+
+Um eine kausale Aussage zu rechtfertigen, wären erforderlich:
+
+\begin{itemize}
+    \item \textbf{Zeitliche Reihenfolge:} Die Ursache muss der Wirkung vorausgehen
+    \item \textbf{Ausschluss von Drittvariablen:} Kontrolle konfundierender Faktoren
+    \item \textbf{Experimentelles Design:} Randomisierte Kontrollstudien (hier nicht möglich)
+    \item \textbf{Theoretische Plausibilität:} Mechanismus muss erklärbar sein
+\end{itemize}
+
+\textbf{Fazit:} Beobachtete Korrelationen in Querschnittsdaten sind wichtige Hinweise auf 
+Zusammenhänge, erlauben aber \textit{per se} keine kausalen Schlussfolgerungen. Weiterführende 
+Analysen (z.\,B. Längsschnittstudien, Experimente) wären nötig, um Kausalität zu belegen.

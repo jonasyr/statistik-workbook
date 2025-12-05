@@ -1,0 +1,120 @@
+% ============================================================
+%          BLOCK 4: KORRELATION UND REGRESSION
+% ============================================================
+
+\section{Korrelation und Regression: \texttt{age} und \texttt{hhinc}}
+\label{sec:block4}
+
+\subsection{Aufgabe 4a: Pearson-Korrelation und Signifikanztest}
+
+\subsubsection{Fragestellung}
+
+Besteht ein linearer Zusammenhang zwischen Alter (\texttt{age}) und Haushaltsnettoeinkommen 
+(\texttt{hhinc})?
+
+\subsubsection{Korrelationskoeffizient}
+
+% TODO: Korrelationstabelle aus Python einfügen
+% \input{tables/age_hhinc_correlation.tex}
+
+\begin{itemize}
+    \item \textbf{Pearson-Korrelation:} $r =$ [TODO]
+    \item \textbf{p-Wert:} $p =$ [TODO]
+    \item \textbf{Stichprobengröße:} $n =$ [TODO]
+\end{itemize}
+
+\subsubsection{Interpretation}
+
+\textbf{Stärke:} [TODO: schwach/moderat/stark basierend auf $|r|$]
+
+\textbf{Richtung:} [TODO: positiv/negativ]
+
+\textbf{Signifikanz:} Bei $\alpha = 0{,}05$ ist die Korrelation [TODO: signifikant/nicht signifikant].
+
+\subsection{Aufgabe 4b: Streudiagramm}
+
+\begin{figure}[h]
+    \centering
+    % TODO: Streudiagramm aus Python einfügen
+    % \includegraphics[width=0.85\textwidth]{../figures/block4/age_hhinc_scatter.pdf}
+    \caption{Streudiagramm: Zusammenhang zwischen Alter (\texttt{age}) und 
+    Haushaltsnettoeinkommen (\texttt{hhinc}).}
+    \source{Eigene Darstellung auf Basis ALLBUS 2021.}
+    \label{fig:age_hhinc}
+\end{figure}
+
+\textbf{Visuelle Beurteilung:} [TODO: Linearität, Ausreißer, Streuung beschreiben]
+
+\subsection{Aufgabe 4c: Einfache lineare Regression}
+
+\subsubsection{Modellspezifikation}
+
+Wir schätzen das lineare Modell:
+
+\begin{equation}
+    \text{hhinc}_i = \beta_0 + \beta_1 \cdot \text{age}_i + \varepsilon_i
+\end{equation}
+
+wobei:
+\begin{itemize}
+    \item $\beta_0$: Achsenabschnitt (erwartetes Einkommen bei Alter = 0)
+    \item $\beta_1$: Steigung (Änderung des Einkommens pro Jahr Alter)
+    \item $\varepsilon_i$: Fehlerterm
+\end{itemize}
+
+\subsubsection{Schätzergebnisse}
+
+% TODO: Regressionstabelle aus Python einfügen
+% \input{tables/age_hhinc_regression.tex}
+
+\begin{itemize}
+    \item \textbf{Intercept} ($\hat{\beta}_0$): [TODO] Euro
+    \item \textbf{Steigung} ($\hat{\beta}_1$): [TODO] Euro pro Jahr
+    \item \textbf{R²:} [TODO]
+    \item \textbf{Adjustiertes R²:} [TODO]
+    \item \textbf{F-Statistik:} $F =$ [TODO], $p =$ [TODO]
+\end{itemize}
+
+\subsubsection{Interpretation der Koeffizienten}
+
+\textbf{Intercept:} [TODO: Interpretation – meist nicht sinnvoll, da Alter = 0 außerhalb 
+des Datenbereichs]
+
+\textbf{Steigung:} Pro zusätzlichem Lebensjahr ändert sich das erwartete Haushaltsnettoeinkommen 
+um [TODO] Euro. [TODO: Vorzeichen und praktische Bedeutung diskutieren]
+
+\textbf{R²:} Das Modell erklärt [TODO]\% der Varianz im Haushaltsnettoeinkommen durch das Alter.
+
+\subsubsection{Grafische Darstellung mit Regressionsgerade}
+
+\begin{figure}[h]
+    \centering
+    % TODO: Streudiagramm mit Regressionslinie aus Python einfügen
+    % \includegraphics[width=0.85\textwidth]{../figures/block4/age_hhinc_regression.pdf}
+    \caption{Streudiagramm mit geschätzter Regressionsgerade.}
+    \source{Eigene Darstellung auf Basis ALLBUS 2021.}
+    \label{fig:age_hhinc_reg}
+\end{figure}
+
+\subsubsection{Beispielprognose}
+
+Für eine Person im Alter von 45 Jahren lautet die Prognose:
+
+\begin{equation}
+    \widehat{\text{hhinc}}_{45} = \hat{\beta}_0 + \hat{\beta}_1 \cdot 45 = \text{[TODO]} \text{ Euro}
+\end{equation}
+
+\textbf{Einschränkung:} Diese Prognose ist nur innerhalb des beobachteten Altersbereichs 
+sinnvoll (keine Extrapolation).
+
+\subsubsection{Modellannahmen und Limitationen}
+
+Das einfache lineare Modell unterstellt:
+\begin{itemize}
+    \item Lineare Beziehung zwischen Alter und Einkommen
+    \item Homoskedastizität (konstante Fehlervarianz)
+    \item Normalverteilte Residuen
+    \item Keine Ausreißer mit starkem Einfluss
+\end{itemize}
+
+[TODO: Kurze Diskussion, ob diese Annahmen erfüllt sind oder Einschränkungen bestehen]

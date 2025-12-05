@@ -1,0 +1,76 @@
+% ============================================================
+%                    DATENBESCHREIBUNG
+% ============================================================
+
+\section{Datenbeschreibung}
+\label{sec:daten}
+
+\subsection{Der ALLBUS 2021 Teildatensatz}
+
+Der verwendete Datensatz ist ein Auszug aus dem ALLBUS 2021 (ZA5284, Version 1.1.0) und 
+enthält 29 Variablen aus verschiedenen Themenbereichen:
+
+\begin{itemize}
+    \item Soziodemografische Merkmale (Alter, Geschlecht, Bildung, Einkommen)
+    \item Politische und wirtschaftliche Einschätzungen
+    \item Werthaltungen und Einstellungen
+    \item Gesundheit und Lebenssituation
+\end{itemize}
+
+Die Stichprobe umfasst \texttt{N = [ANZAHL]} Befragte aus der deutschsprachigen 
+Wohnbevölkerung ab 18 Jahren.
+
+\subsection{Verwendete Variablen}
+
+Gemäß der individuellen Variablenzuteilung werden in dieser Arbeit folgende Variablen analysiert:
+
+\subsubsection{Block 1: Univariate Deskription}
+
+\begin{itemize}
+    \item \textbf{mc04} (nominal): Ausländer im Freundeskreis
+    \item \textbf{ep04} (ordinal): Wirtschaftslage in Deutschland in 1 Jahr
+    \item \textbf{hhinc} (metrisch): Haushaltsnettoeinkommen in Euro
+\end{itemize}
+
+\subsubsection{Block 2: Bivariate Deskription}
+
+\begin{itemize}
+    \item \textbf{ep01} (ordinal): Aktuelle Wirtschaftslage in Deutschland
+    \item \textbf{fe14} (ordinal): Erziehungsziel „beliebt sein"
+    \item \textbf{xt10} (metrisch): Interviewdauer in Minuten
+    \item \textbf{age} (metrisch): Alter in Jahren
+\end{itemize}
+
+\subsubsection{Block 3: Inferenzstatistik}
+
+\begin{itemize}
+    \item \textbf{lm02} (metrisch): Tägliche Fernsehdauer in Minuten
+    \item \textbf{sex} (nominal): Geschlecht (für Gruppenvergleich)
+\end{itemize}
+
+\subsubsection{Block 4: Regression}
+
+\begin{itemize}
+    \item \textbf{age} (metrisch): Alter in Jahren (Prädiktor)
+    \item \textbf{hhinc} (metrisch): Haushaltsnettoeinkommen (Zielvariable)
+\end{itemize}
+
+\subsubsection{Block 5: ANOVA}
+
+\begin{itemize}
+    \item \textbf{hs01} (ordinal): Gesundheitszustand (Gruppierungsfaktor)
+    \item \textbf{gd02} (metrisch): Wohndauer im Ort in Jahren
+\end{itemize}
+
+\subsection{Datenbereinigung}
+
+Vor den Analysen wurden folgende Bereinigungsschritte durchgeführt:
+
+\begin{enumerate}
+    \item Behandlung fehlender Werte (Sondercodes wie -99, -98, -42 etc.)
+    \item Konvertierung von Datentypen (numerisch vs. kategorial)
+    \item Plausibilitätsprüfungen (Wertebereich, Ausreißer)
+    \item Speicherung als bereinigte CSV-Datei (\texttt{allbus\_clean.csv})
+\end{enumerate}
+
+Details zur Datenbereinigung finden sich im Python-Skript \texttt{src/data\_prep.py}.

@@ -1,0 +1,130 @@
+% ============================================================
+%          BLOCK 1: UNIVARIATE DESKRIPTION
+% ============================================================
+
+\section{Univariate Deskription und Skalenniveaus}
+\label{sec:block1}
+
+\subsection{Aufgabe 1b: Skalenniveaus}
+
+Die Wahl geeigneter statistischer Methoden hängt wesentlich vom Skalenniveau der Variablen ab. 
+Man unterscheidet drei grundlegende Skalenniveaus:
+
+\subsubsection{Nominalskalenniveau}
+
+\textbf{Definition:} Variablen mit Nominalskalenniveau besitzen Kategorien ohne natürliche Ordnung. 
+Es kann nur Gleichheit oder Verschiedenheit festgestellt werden.
+
+\textbf{Beispiel:} Variable \texttt{mc04} – „Haben Sie Ausländer im Freundeskreis?" mit den 
+Kategorien „Ja", „Nein", „Weiß nicht". Diese Kategorien haben keine sinnvolle Reihenfolge.
+
+\textbf{Zulässige Statistiken:}
+\begin{itemize}
+    \item Häufigkeiten (absolut und relativ)
+    \item Modus (häufigste Kategorie)
+    \item Balken- oder Kreisdiagramme
+\end{itemize}
+
+\subsubsection{Ordinalskalenniveau}
+
+\textbf{Definition:} Variablen mit Ordinalskalenniveau besitzen geordnete Kategorien. 
+Die Abstände zwischen den Kategorien sind jedoch nicht interpretierbar.
+
+\textbf{Beispiel:} Variable \texttt{ep04} – „Wie wird sich die wirtschaftliche Lage in Deutschland 
+in einem Jahr entwickeln?" mit Kategorien von „wesentlich besser" bis „wesentlich schlechter". 
+Die Kategorien sind klar geordnet, aber der Abstand zwischen „besser" und „wesentlich besser" 
+ist nicht quantifizierbar.
+
+\textbf{Zulässige Statistiken:}
+\begin{itemize}
+    \item Alle Statistiken des Nominalniveaus
+    \item Median (mittlere Kategorie)
+    \item Perzentile
+    \item Rangkorrelationen (Spearman, Kendall)
+\end{itemize}
+
+\subsubsection{Metrisches Skalenniveau}
+
+\textbf{Definition:} Variablen mit metrischem Skalenniveau (Intervall- oder Verhältnisskala) 
+besitzen gleichabständige Einheiten. Abstände und Verhältnisse sind interpretierbar.
+
+\textbf{Beispiel:} Variable \texttt{hhinc} – Haushaltsnettoeinkommen in Euro. Die Differenz 
+zwischen 2000€ und 3000€ ist genauso groß wie zwischen 4000€ und 5000€.
+
+\textbf{Zulässige Statistiken:}
+\begin{itemize}
+    \item Alle Statistiken der vorherigen Niveaus
+    \item Mittelwert
+    \item Standardabweichung, Varianz
+    \item Pearson-Korrelation
+    \item Regression, t-Tests, ANOVA
+\end{itemize}
+
+\subsection{Aufgabe 1c: Univariate Analyse von \texttt{ep04} (ordinal)}
+
+\subsubsection{Häufigkeitsverteilung}
+
+% TODO: Tabelle aus Python einfügen
+% \input{tables/ep04_frequencies.tex}
+
+\textbf{Interpretation:} [TODO: Beschreibung der Verteilung]
+
+\subsubsection{Grafische Darstellung}
+
+\begin{figure}[h]
+    \centering
+    % TODO: Abbildung aus Python einfügen
+    % \includegraphics[width=0.85\textwidth]{../figures/block1/ep04_distribution.pdf}
+    \caption{Häufigkeitsverteilung der Variable \texttt{ep04} – Erwartete Wirtschaftslage in 1 Jahr.}
+    \source{Eigene Darstellung auf Basis ALLBUS 2021.}
+    \label{fig:ep04}
+\end{figure}
+
+\subsubsection{Lagemaße}
+
+\begin{itemize}
+    \item \textbf{Modus:} [TODO: Häufigste Kategorie]
+    \item \textbf{Median:} [TODO: Mittlere Kategorie]
+\end{itemize}
+
+\textbf{Interpretation:} [TODO: Interpretation der Lagemaße]
+
+\subsection{Aufgabe 1d: Univariate Analyse von \texttt{hhinc} (metrisch)}
+
+\subsubsection{Klassenbildung}
+
+Für die Darstellung der Einkommensverteilung wurden folgende Klassen gebildet:
+
+% TODO: Tabelle der Klassenbildung einfügen
+% \input{tables/hhinc_classes.tex}
+
+\subsubsection{Histogramm}
+
+\begin{figure}[h]
+    \centering
+    % TODO: Histogramm aus Python einfügen
+    % \includegraphics[width=0.85\textwidth]{../figures/block1/hhinc_histogram.pdf}
+    \caption{Histogramm des Haushaltsnettoeinkommens (\texttt{hhinc}).}
+    \source{Eigene Darstellung auf Basis ALLBUS 2021.}
+    \label{fig:hhinc}
+\end{figure}
+
+\textbf{Häufigkeitsdichte vs. absolute Häufigkeit:} Das Histogramm zeigt die Häufigkeitsdichte, 
+sodass die Fläche jedes Balkens proportional zur relativen Häufigkeit der entsprechenden 
+Klasse ist. Dies ist bei unterschiedlich breiten Klassen wichtig für eine korrekte Interpretation.
+
+\subsubsection{Statistische Kennwerte}
+
+% TODO: Kennwerte-Tabelle aus Python einfügen
+% \input{tables/hhinc_statistics.tex}
+
+\begin{itemize}
+    \item \textbf{Mittelwert:} [TODO] Euro
+    \item \textbf{Standardabweichung:} [TODO] Euro
+    \item \textbf{Median:} [TODO] Euro
+    \item \textbf{Minimum:} [TODO] Euro
+    \item \textbf{Maximum:} [TODO] Euro
+\end{itemize}
+
+\textbf{Interpretation:} [TODO: Interpretation der Kennwerte, Schiefe der Verteilung, 
+Vergleich Mittelwert vs. Median]

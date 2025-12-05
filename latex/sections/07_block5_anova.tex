@@ -1,0 +1,123 @@
+% ============================================================
+%          BLOCK 5: EINFAKTORIELLE ANOVA
+% ============================================================
+
+\section{Einfaktorielle ANOVA: \texttt{gd02} nach \texttt{hs01}}
+\label{sec:block5}
+
+\subsection{Aufgabe 5a: Gruppenbildung und deskriptive Statistik}
+
+\subsubsection{Gruppierungsvariable}
+
+Variable \texttt{hs01} erfasst den subjektiven Gesundheitszustand mit [TODO: Anzahl] 
+Kategorien (z.\,B. „sehr gut", „gut", „zufriedenstellend", „weniger gut", „schlecht").
+
+\subsubsection{Zielvariable}
+
+Variable \texttt{gd02} misst die Wohndauer im aktuellen Wohnort in Jahren. Personen mit 
+Wohndauer „unter 1 Jahr" wurden als 0 Jahre kodiert.
+
+\subsubsection{Deskriptive Statistik nach Gruppen}
+
+% TODO: Gruppentabelle aus Python einfügen
+% \input{tables/gd02_by_hs01_descriptives.tex}
+
+Die Tabelle zeigt für jede Gesundheitsgruppe:
+\begin{itemize}
+    \item Anzahl der Beobachtungen ($n$)
+    \item Mittelwert der Wohndauer ($\bar{x}$)
+    \item Standardabweichung ($s$)
+\end{itemize}
+
+\textbf{Erste Eindrücke:} [TODO: Unterschiede zwischen Gruppen beschreiben]
+
+\subsection{Aufgabe 5b: Unabhängigkeit der Gruppen}
+
+\subsubsection{Voraussetzung für ANOVA}
+
+Die einfaktorielle ANOVA setzt voraus, dass die Beobachtungen in den Gruppen unabhängig sind 
+(d.\,h. keine Person gehört zu mehreren Gruppen).
+
+\subsubsection{Argumentation}
+
+Im ALLBUS-Datensatz gilt:
+\begin{itemize}
+    \item Jede Person wurde nur einmal befragt
+    \item Der Gesundheitszustand (\texttt{hs01}) ist ein Personenmerkmal – jede Person fällt 
+    in genau eine Kategorie
+    \item Es gibt keine offensichtlichen Cluster (z.\,B. Haushalte mit mehreren Befragten)
+    \item Die Stichprobenziehung erfolgte unabhängig
+\end{itemize}
+
+\textbf{Fazit:} Die Unabhängigkeitsannahme ist plausibel erfüllt.
+
+\subsection{Aufgabe 5c: Einfaktorielle ANOVA bei $\alpha = 0{,}20$}
+
+\subsubsection{Hypothesen}
+
+\begin{itemize}
+    \item $H_0$: $\mu_1 = \mu_2 = \ldots = \mu_k$ (alle Gruppen haben dieselbe mittlere Wohndauer)
+    \item $H_1$: Mindestens zwei Gruppenmittelwerte unterscheiden sich
+\end{itemize}
+
+Signifikanzniveau: $\alpha = 0{,}20$ (ungewöhnlich hoch, aber laut Aufgabenstellung vorgegeben)
+
+\subsubsection{ANOVA-Tabelle}
+
+% TODO: ANOVA-Tabelle aus Python einfügen
+% \input{tables/gd02_anova.tex}
+
+\begin{itemize}
+    \item \textbf{F-Statistik:} $F =$ [TODO]
+    \item \textbf{Freiheitsgrade:} $df_{\text{between}} =$ [TODO], $df_{\text{within}} =$ [TODO]
+    \item \textbf{p-Wert:} $p =$ [TODO]
+\end{itemize}
+
+\subsubsection{Interpretation}
+
+\textbf{Bei $p < 0{,}20$:} Wir verwerfen $H_0$ und schließen, dass sich die mittlere Wohndauer 
+zwischen mindestens zwei Gesundheitsgruppen signifikant unterscheidet.
+
+\textbf{Bei $p \geq 0{,}20$:} Die Daten liefern keine ausreichende Evidenz für Unterschiede.
+
+\subsubsection{Post-Hoc-Tests}
+
+Da die ANOVA nur feststellt, \textit{dass} Unterschiede bestehen (nicht \textit{welche}), 
+werden Post-Hoc-Tests (z.\,B. Tukey HSD) durchgeführt:
+
+% TODO: Post-Hoc-Ergebnis aus Python einfügen
+% \input{tables/gd02_posthoc.tex}
+
+\textbf{Signifikante Paarvergleiche:} [TODO: Welche Gruppen unterscheiden sich?]
+
+\subsection{Diskussion des Signifikanzniveaus}
+
+\subsubsection{Einfluss von $\alpha$ auf die Ergebnisse}
+
+Das gewählte $\alpha = 0{,}20$ ist deutlich höher als das übliche 5\%-Niveau:
+
+\begin{itemize}
+    \item \textbf{Bei $\alpha = 0{,}05$:} [TODO: Wären die Ergebnisse noch signifikant?]
+    \item \textbf{Bei $\alpha = 0{,}20$:} Höhere Wahrscheinlichkeit, $H_0$ zu verwerfen 
+    (auch bei kleinen Effekten)
+\end{itemize}
+
+\subsubsection{Typ-I- vs. Typ-II-Fehler}
+
+\begin{itemize}
+    \item \textbf{Typ-I-Fehler} ($\alpha$): Fälschliche Ablehnung von $H_0$ (falsch positiv)
+    \item \textbf{Typ-II-Fehler} ($\beta$): Fälschliches Beibehalten von $H_0$ (falsch negativ)
+\end{itemize}
+
+Ein höheres $\alpha$ erhöht die Wahrscheinlichkeit eines Typ-I-Fehlers, reduziert aber 
+gleichzeitig die Wahrscheinlichkeit eines Typ-II-Fehlers (höhere Power).
+
+\subsubsection{Praktische Implikationen}
+
+In explorativen Studien kann ein höheres $\alpha$ gerechtfertigt sein, um keine potenziell 
+wichtigen Effekte zu übersehen. In konfirmatorischen Studien (z.\,B. klinische Tests) ist 
+hingegen ein strengeres Niveau erforderlich.
+
+\textbf{Fazit:} Die Wahl von $\alpha = 0{,}20$ führt dazu, dass [TODO: mehr/weniger] Gruppen-
+unterschiede als signifikant identifiziert werden. Dies sollte bei der Interpretation 
+berücksichtigt werden.

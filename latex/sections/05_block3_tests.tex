@@ -1,0 +1,113 @@
+% ============================================================
+%          BLOCK 3: INFERENZSTATISTIK
+% ============================================================
+
+\section{Inferenzstatistik mit \texttt{lm02}}
+\label{sec:block3}
+
+\subsection{Aufgabe 3a: Grundgesamtheit vs. Stichprobe}
+
+\subsubsection{Grundgesamtheit (Population)}
+
+Die \textbf{Grundgesamtheit} im Kontext des ALLBUS 2021 umfasst die deutschsprachige 
+Wohnbevölkerung in Privathaushalten ab 18 Jahren in Deutschland. Dies entspricht etwa 
+70 Millionen Personen.
+
+\subsubsection{Stichprobe}
+
+Die \textbf{Stichprobe} besteht aus den tatsächlich befragten [TODO: N] Personen, die nach 
+einem Zufallsverfahren ausgewählt wurden. Diese Stichprobe soll repräsentativ für die 
+Grundgesamtheit sein.
+
+\subsubsection{Inferenzstatistischer Ansatz}
+
+Die Inferenzstatistik erlaubt es, von den Stichprobendaten auf die Grundgesamtheit zu 
+schließen:
+
+\begin{itemize}
+    \item \textbf{Punktschätzung:} Der Stichprobenmittelwert $\bar{x}$ schätzt den 
+    Populationsmittelwert $\mu$
+    \item \textbf{Intervallschätzung:} Konfidenzintervalle geben einen Bereich an, in dem 
+    $\mu$ mit bestimmter Wahrscheinlichkeit liegt
+    \item \textbf{Hypothesentests:} Prüfen von Vermutungen über die Population
+\end{itemize}
+
+\subsection{Aufgabe 3b: Konfidenzintervall für \texttt{lm02}}
+
+Variable \texttt{lm02} erfasst die tägliche Fernsehdauer in Minuten.
+
+\subsubsection{Deskriptive Statistik}
+
+% TODO: Statistik-Tabelle aus Python einfügen
+% \input{tables/lm02_descriptives.tex}
+
+\begin{itemize}
+    \item \textbf{Stichprobenmittelwert:} $\bar{x} =$ [TODO] Minuten
+    \item \textbf{Standardabweichung:} $s =$ [TODO] Minuten
+    \item \textbf{Stichprobengröße:} $n =$ [TODO]
+\end{itemize}
+
+\subsubsection{95\%-Konfidenzintervall}
+
+Das Konfidenzintervall wurde mit der t-Verteilung berechnet (da $\sigma$ unbekannt):
+
+\begin{equation}
+    \text{KI}_{95\%} = \bar{x} \pm t_{n-1; 0{,}975} \cdot \frac{s}{\sqrt{n}}
+\end{equation}
+
+\textbf{Ergebnis:} [TODO: untere Grenze] $< \mu <$ [TODO: obere Grenze] Minuten
+
+\subsubsection{Interpretation}
+
+Das 95\%-Konfidenzintervall bedeutet: Wenn wir das Stichprobenverfahren unendlich oft 
+wiederholen würden, lägen in 95\% der Fälle die so konstruierten Intervalle den wahren 
+Populationsmittelwert $\mu$ enthalten.
+
+\textbf{Wichtig:} Es bedeutet \textit{nicht}, dass der wahre Wert mit 95\% Wahrscheinlichkeit 
+in diesem spezifischen Intervall liegt (der wahre Wert ist fix, nur unbekannt).
+
+\subsection{Aufgabe 3c: t-Test für zwei unabhängige Gruppen}
+
+\subsubsection{Fragestellung}
+
+Unterscheidet sich die durchschnittliche Fernsehdauer (\texttt{lm02}) zwischen Männern 
+und Frauen (\texttt{sex})?
+
+\subsubsection{Hypothesen}
+
+\begin{itemize}
+    \item $H_0$: $\mu_{\text{männlich}} = \mu_{\text{weiblich}}$ 
+    (kein Unterschied in der mittleren Fernsehdauer)
+    \item $H_1$: $\mu_{\text{männlich}} \neq \mu_{\text{weiblich}}$ 
+    (Unterschied besteht, zweiseitig)
+\end{itemize}
+
+Signifikanzniveau: $\alpha = 0{,}05$
+
+\subsubsection{Deskriptive Statistik nach Gruppen}
+
+% TODO: Gruppentabelle aus Python einfügen
+% \input{tables/lm02_by_sex.tex}
+
+\subsubsection{Testergebnis}
+
+% TODO: t-Test-Ergebnis aus Python einfügen
+% \input{tables/lm02_ttest.tex}
+
+\begin{itemize}
+    \item \textbf{t-Statistik:} $t =$ [TODO]
+    \item \textbf{Freiheitsgrade:} $df =$ [TODO]
+    \item \textbf{p-Wert:} $p =$ [TODO]
+\end{itemize}
+
+\subsubsection{Interpretation}
+
+[TODO: Entscheidung über H₀]
+
+\textbf{Bei $p < 0{,}05$:} Wir verwerfen $H_0$ und schließen, dass ein statistisch 
+signifikanter Unterschied in der mittleren Fernsehdauer zwischen den Geschlechtern besteht.
+
+\textbf{Bei $p \geq 0{,}05$:} Wir können $H_0$ nicht verwerfen. Die Daten liefern keine 
+ausreichende Evidenz für einen Unterschied.
+
+\textbf{Praktische Relevanz:} [TODO: Größe des Unterschieds bewerten]
