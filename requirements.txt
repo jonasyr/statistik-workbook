@@ -5,3 +5,7 @@ openpyxl
 matplotlib
 scipy
 statsmodels
+black
+isort
+ruff
+pre-commit
