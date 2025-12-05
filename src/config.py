@@ -26,4 +26,3 @@ if __name__ == "__main__":
     print("PROJECT_ROOT:", PROJECT_ROOT)
     ensure_directories()
     print("Verzeichnisse geprüft/angelegt.")
-

@@ -1,7 +1,7 @@
 # Master script: Runs all analysis blocks in sequence
-from config import ensure_directories
-import data_prep
 import block1_univariat
+import data_prep
+from config import ensure_directories
 
 
 def main():
@@ -19,4 +19,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

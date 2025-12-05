@@ -1,7 +1,7 @@
 # Block 1: Univariate analysis (Tasks 1b-1d)
 import pandas as pd
-from config import DATA_PROCESSED
 
+from config import DATA_PROCESSED
 
 FILENAME_PROCESSED = "allbus_raw_copy.csv"
 
@@ -41,4 +41,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

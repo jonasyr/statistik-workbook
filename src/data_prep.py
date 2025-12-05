@@ -1,7 +1,7 @@
 # Data preparation: Reading and cleaning data
 import pandas as pd
-from config import DATA_RAW, DATA_PROCESSED
 
+from config import DATA_PROCESSED, DATA_RAW
 
 # Dateiname der Rohdaten (ggf. anpassen)
 FILENAME_RAW = "ALLBUS_2021_teildatensatz.xlsx"
