@@ -23,7 +23,7 @@
 
 ## Phase 1: Foundation & Data Preparation
 
-### 1.1 Update LaTeX Metadata
+### 1.1 Update LaTeX Metadata - DONE
 **Why:** Personalize the document with student information before starting content work.
 
 **What to do:**
